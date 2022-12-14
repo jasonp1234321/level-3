@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>What is a Function, Really</title>
+  <style></style>
+  <script>
+    function initialize(){
+      numberOutput = document.getElementById("numoutput");
+      number = 0;
+    }
+
+    function modifyNumber(modifier){
+      number += modifier;
+      display();
+    }
+
+    function display(){
+      numberOutput.innerHTML = number;
+    }
+
+    function getRandomInteger(lower, upper){
+      var multiplier = upper - (lower-1);
+      rnd = parseInt(Math.random()*multiplier)+lower;
+      return rnd;
+    }
+  </script>
+</head>
+
+<body onload = "initialize();">
+  <div id = "numoutput">0</div>
+  <hr />
+  <button onclick = "modifyNumber(getRandomInteger(-10, 10));">Modify the Number Randomly</button>
+
+</body>
+
+</html>
